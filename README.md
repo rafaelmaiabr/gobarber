@@ -13,30 +13,53 @@
 <ol>
   <li><pre>yarn add express</pre></li>
   <li><pre>yarn add nodemon</pre></li>
-  <li><pre>yarn add sucrase</pre> | Para utilizar funções novas do js que o Node ainda não suporta como o Import e Export<br>
+  <li><pre>yarn add sucrase</pre>
+  Para utilizar funções novas do js que o Node ainda não suporta como o Import e Export<br>
   Antes:
   <pre>const express = require('express');</pre>
   <pre>module.exports = new App().server;</pre>
-  <br>
   Depois:
   <pre>import express from 'express';</pre>
   <pre>export default new App().server;</pre>
-  <br>
-  <i>Após alterar a chamada do import e export utilizar
+  <i>Após alterar a chamada do import e export utilizar</i>
   <pre>yarn sucrase-node src/server.js</pre> ao invés de 
   <pre>node src/server.js</pre>
-  </i>
   </li>
-
 </ol>
+<hr>
+<ol>
+  <li>
+  Verificar se código está seguindo padrões.
+  <pre>
+  yarn add eslint -D
+  </pre>
+  Configurando
+  <pre>
+  yarn eslint --init
+  #Selecione as opções
+  ? How would you like to use ESLint? == To check syntax, find problems, and enforce code style
+  ? What type of modules does your project use? == JavaScript modules (import/export)
+  ? Which framework does your project use? == None of these
+  ? Does your project use TypeScript? == No
+  ? Where does your code run? == Node
+  ? How would you like to define a style for your project? == Use a popular style guide
+  ? Which style guide do you want to follow? == Airbnb: https://github.com/airbnb/javascript
+  ? What format do you want your config file to be in? == JavaScript
+  </pre>
+  </li>
+</li>
+
 
 <strong>Arquiterura</strong>
 
 <ol>
   <li>SRC: Código manipulado no dia dia</li>
   <li>
-    <pre>yarn dev</pre> | Roda o servidor<br>
-    <pre>yarn dev:debug</pre> | Roda o debug<br>
+    Roda o servidor
+    <pre>yarn dev</pre>
+    
+  Roda o debug
+    <pre>yarn dev:debug</pre>
   </li>
 </ol>
 
@@ -116,10 +139,41 @@
   <pre>docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres</pre>
   <i>Cria conteiner: Senha docker, alterna porta 5432 p/ 5432</i>
   </li>
-  <li>Verificar conteiners: <pre>docker ps</pre></li>
+  <li>Principais comandos:
+  <pre>
+  #Visualizar conteiners em execução
+  docker ps
+  
+  #Lisar todos os conteiners
+  docker ps -a
+  
+  #forçar parada de um conteiner
+  docker stop database
+  
+  #iniciar conteiner utilizando nome ou ID. Ex. utilziando nome
+  docker start database
+
+  #Visualizar erros utilizar ( nome ou ID) do conteiner
+  docker logs database
+
+  </pre></li>
 </ol>
 
 <h1>Interface para visualizar bases Postgres - <a href="">POSTBIRD</a></h1>
 Instalação via terminal: <pre>sudo snap install postbird</pre>
 
+<h1>Conceito MVC</h1>
+Model, View e Controller
+<pre>
+//ESTRUTURA DE UM CONTROLLER
+class UserController {
+  index() { }//Lista de usuários
+  show() { }//Exibir um único usuário
+  store() { }//Cadastrar usuário
+  update() { }//Alterar usuário
+  delete() { }//Remover usuário
+}
+</pre>
+
+<h1>Definindo um padrão de código</h1>
 
