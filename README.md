@@ -1,4 +1,4 @@
-<h1>Contrução do APP Gobarber <small>para fins de aprendicado</small></h1>
+<h1>Contrução do APP Gobarber <small>para fins de aprendizado</small></h1>
 
 <strong>Criando a Estrutura</strong> Configuração via terminal
 <ol>
